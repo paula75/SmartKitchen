@@ -13,62 +13,63 @@ import java.util.Optional;
 class ApplicationFacadeController {
 
 
-
-
     @Autowired
-    private ToolsRepository toolsRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    private NfcRepository nfcRepository;
 
     @Autowired
     private SensorRepository sensorRepository;
 
+    @Autowired
+    private BestandRepository bestandRepository;
 
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public List<User> getAllUser(){
-        return userRepository.findAll();
+
+
+    @RequestMapping(value = "/nfc", method = RequestMethod.GET)
+    public Nfc getAllNfc(){
+        return nfcRepository.findFirst1ByOrderByIdDesc();
     }
-/*
-    @RequestMapping(value = "/user/{name}", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/nfc", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})
     @ResponseBody
-    public Optional<User> getUserByName(@RequestParam("name") String name){
-        return userRepository.findByName(name);
+    public Nfc updateNfc(@RequestBody String uBody){
+	String[] uBodyList = uBody.split(":");
+	Nfc nfc = new Nfc();
+	nfc.setData(uBodyList[0]);
+        nfcRepository.save(nfc);
+        return nfc;
     }
-*/
-
-    @RequestMapping(value = "/user", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})
-    @ResponseBody
-    public User updateUser(@RequestBody User user){
-       /* User n = new User();
-        n.setName(name);
-        n.setU_lvl(Integer.valueOf(u_lvl));
-        n.setTime(Integer.valueOf(time));*/
-        userRepository.save(user);
-        return user;
-    }
-
+    
+    @CrossOrigin
     @RequestMapping(value = "/sensor", method = RequestMethod.GET)
-    public List<Sensor> getAllWerte(){
-        return sensorRepository.findAll();
-    }
+	        public Sensor getAllWerte(){
+			        return sensorRepository.findFirst1ByOrderByIdDesc();
+				    }
 
-    @RequestMapping(value = "/sensor", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})
-    @ResponseBody
-    public Sensor createSensorData(@RequestBody Sensor wert){
-        sensorRepository.save(wert);
-        return wert;
-    }
+        @RequestMapping(value = "/sensor", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})
+		@ResponseBody
+		        public Sensor updateSensor(@RequestBody String sBody){
+			String[] sBodyList = sBody.split(":");
+			Sensor sensor = new Sensor();
+			sensor.setWert(Integer.valueOf(sBodyList[0]));
+			sensorRepository.save(sensor);
+		        return sensor;
+			}
 
-    @RequestMapping(value= "/tools", method = RequestMethod.GET)
-    public List<Tools> getAllTools(){
-        return toolsRepository.findAll();
-    }
+@CrossOrigin
+    @RequestMapping(value = "/bestand", method = RequestMethod.GET)
+    public Bestand getAllBestand(){
+	return bestandRepository.findFirst1ByOrderByIdDesc();
+							                                        }
 
-    @RequestMapping(value= "/tools", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})
-    @ResponseBody
-    public Tools updateTools(@RequestBody Tools tool){
-	toolsRepository.save(tool);
-	return tool;
-    }
+        @RequestMapping(value = "/bestand", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})	                @ResponseBody
+	           public Bestand updateBestand(@RequestBody String bBody){
+                   String[] bBodyList = bBody.split(":");
+                   Bestand bestand = new Bestand();
+		   bestand.setName(bBodyList[0]);
+                   bestand.setWert(Integer.valueOf(bBodyList[1]));
+		   bestandRepository.save(bestand);
+    		   return bestand;
+	                        }
 }
+
+
