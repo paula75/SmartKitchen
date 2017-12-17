@@ -36,8 +36,10 @@ class ApplicationFacadeController {
 	Nfc nfc = new Nfc();
 	nfc.setData(uBodyList[0]);
         nfcRepository.save(nfc);
-        return nfc;
+        return string = nfc.getData + " | " + sensorRepository.findFirst1ByOrderByIdDesc().getWert;
     }
+
+
     
     @CrossOrigin
     @RequestMapping(value = "/sensor", method = RequestMethod.GET)
