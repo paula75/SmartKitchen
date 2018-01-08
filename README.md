@@ -19,6 +19,7 @@ The following hardware is used:
 
 ### RaspberryPi 3 with 6LoWPAN
 <img src="/images/raspberryPi3.png" width="300"/>
+
 ### Ateml SAM R21 Xplained Pro
 <p align="center">
   <img src="/images/atmel_board.png" width="350"/>
