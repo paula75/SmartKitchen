@@ -17,5 +17,5 @@ For the measurment the FSR400 is used.
 
 
 <p align="center">
-  <img src="/images/fsr.png" width="350"/>
+  <img src="/images/FSR.png" width="350"/>
 </p>
