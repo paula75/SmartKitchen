@@ -31,7 +31,7 @@ with an **NFC Shield PN532** to detected the NFC-tags and an analog pressure sen
 
 
 <p align="center">
-  <img src="/images/PN532.PNG" width="200"/>
+  <img src="/images/PN532.PNG" width="250"/>
 </p>
 
 ## Software Architecture
