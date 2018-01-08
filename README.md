@@ -1,4 +1,4 @@
-# Smart Kitchen
+ # Smart Kitchen
 
 The kitchen ist he heart of any apartment, so why should it not be intelligent?!
 At the present time more and more devices are interconnected, the so-called IOT-Devices. 
@@ -18,9 +18,9 @@ To determine if the food is have changed, the weight will be measured by a press
 The following hardware is used:
 
 * RaspberryPi 3 with 6LoWPAN
-![RaspberryPi 3](/images/raspberryPi3.png)
+![RaspberryPi 3](/images/raspberryPi3.png width="350")
 * Ateml SAM R21 Xplained Pro
-![Atmel SAM R21 Xplained Pro](/images/atmel_board.png)
+![Atmel SAM R21 Xplained Pro](/images/atmel_board.png width="350")
 with an NFC Shield PN532 to detected the NFC-tags and an analog pressure sensor to measure weight
 
 ## Software Architecture
