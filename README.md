@@ -19,12 +19,12 @@ The following hardware is used:
 
 ### RaspberryPi 3 with 6LoWPAN
 <p align="center">
-  <img src="/images/raspberryPi3.png" width="350"/>
- </p>
+  <img src="/images/raspberryPi3.png" width="300"/>
+</p>
 ### Ateml SAM R21 Xplained Pro
 <p align="center">
   <img src="/images/atmel_board.png" width="350"/>
- </p>
+</p>
 with an NFC Shield PN532 to detected the NFC-tags and an analog pressure sensor to measure weight.
 
 ## Software Architecture
@@ -33,4 +33,4 @@ This project based on the following software architecture
 
 <p align="center">
   <img src="/images/software_architecture.png" width="800"/>
- </p>
+</p>
