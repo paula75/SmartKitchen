@@ -18,16 +18,19 @@ To determine if the food is have changed, the weight will be measured by a press
 The following hardware is used:
 
 * RaspberryPi 3 with 6LoWPAN
-![RaspberryPi 3](/images/raspberryPi3.png){:height="750px" width="350px"}
 <p align="center">
   <img src="/images/raspberryPi3.png" width="350"/>
  </p>
 * Ateml SAM R21 Xplained Pro
-![Atmel SAM R21 Xplained Pro](/images/atmel_board.png){:width="350px"}
+<p align="center">
+  <img src="/images/atmel_board.png" width="350"/>
+ </p>
 with an NFC Shield PN532 to detected the NFC-tags and an analog pressure sensor to measure weight
 
 ## Software Architecture
 
 This project based on the following software architecture
 
-![Software Architecture](/images/software_architecture.png)
+<p align="center">
+  <img src="/images/software_architecture.png" width="700"/>
+ </p>
