@@ -71,7 +71,18 @@ size_t _send(uint8_t *buf, size_t len, char *addr_str, char *port_str)
     return bytes_sent;
 }
 
-
+/*
+==========================================================================
+Name: put
+Version: 1.0
+Beschreibung: Fuehrt einen http put befehl aus
+input: adr: IPV6 Adresse
+       path
+       data
+output: return : 0 = Error, 1 = OK
+library: coap_put.h
+==========================================================================
+*/
 int put(char *adr, char *pth, char *data)
 {
   uint8_t buf[GCOAP_PDU_BUF_SIZE];
@@ -85,6 +96,7 @@ int put(char *adr, char *pth, char *data)
          (unsigned) len);
   if (!_send(&buf[0], len, adr, CROSSCOAP_PORT)) {
       puts("gcoap_cli: msg send failed");
+      return 0;
   }
   return 1;
 
