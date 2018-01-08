@@ -15,7 +15,7 @@
 #include "nfc.h"
 
 #include "thread.h"
-//#include "msg.h"
+#include "msg.h"
 
 
 #define DELAY_SHORT     (2500LU * US_PER_MS) /* 250 ms */
@@ -40,7 +40,7 @@ library: fsr.h, coap_put.h
 void *measure_pressure_thread(void *arg) {
     (void) arg;
     while(1) {
-      msg_t msg
+      msg_t msg;
       xtimer_ticks32_t last = xtimer_now();
       if(msg_receive(&msg)) {
         int sample[4];
