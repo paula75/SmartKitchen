@@ -26,6 +26,7 @@ The following hardware is used:
 <p align="center">
   <img src="/images/atmel_board.png" width="350"/>
 </p>
+
 with an **NFC Shield PN532** to detected the NFC-tags and an analog pressure sensor to measure weight.
 
 
