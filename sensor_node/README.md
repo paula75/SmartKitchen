@@ -13,7 +13,7 @@ To read out and detect the NFC-tags the PN532 Board is used.
 ## Pressure 
 
 To measure the weight we measure the pressure and then calculated to a weight. 
-For the measurment the FSR400 is used.
+For the measurment the FSR400 is used. The following image show the conversion formula of the FSR.
 
 
 <p align="center">
