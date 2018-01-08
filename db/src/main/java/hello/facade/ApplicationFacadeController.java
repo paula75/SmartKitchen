@@ -31,12 +31,13 @@ class ApplicationFacadeController {
 
     @RequestMapping(value = "/nfc", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})
     @ResponseBody
-    public Nfc updateNfc(@RequestBody String uBody){
+    public String updateNfc(@RequestBody String uBody){
 	String[] uBodyList = uBody.split(":");
+	Sensor sensor = sensorRepository.findFirst1ByOrderByIdDesc();
 	Nfc nfc = new Nfc();
 	nfc.setData(uBodyList[0]);
         nfcRepository.save(nfc);
-        return string = nfc.getData + " | " + sensorRepository.findFirst1ByOrderByIdDesc().getWert;
+        return nfc.getData() + " | " + sensor.getWert();
     }
 
 
