@@ -18,8 +18,8 @@
 #include "msg.h"
 
 
-#define DELAY_SHORT     (2500LU * US_PER_MS) /* 250 ms */
-#define DELAY           (10000LU * US_PER_MS) /* 10000 ms */
+#define DELAY_SHORT     (500LU * US_PER_MS) /* 500 ms */
+#define DELAY           (2000LU * US_PER_MS) /* 2000 ms */
 
 char stack[THREAD_STACKSIZE_MAIN];
 
@@ -47,7 +47,7 @@ void *measure_pressure_thread(void *arg) {
         double force[4];
         //Vier Analogwerte in Gewichtswerte umwandeln
         for(int e = 0; e < 4; e++) {
-            xtimer_periodic_wakeup(&last, DELAY_SHORT);
+            xtimer_periodic_wakeup(&last, DELAY);
             sample[e] = fsr_read_adc(0);
             force[e] = (sample[e] * 2.2287) - 474.21;
         }
@@ -99,9 +99,9 @@ int main(void)
     while (1) {
       xtimer_periodic_wakeup(&last, DELAY_SHORT);
       char str_nfc_data[16];
-
       //NFC-Tag lesen und per http put senden
       if(nfc_read_data(str_nfc_data)) {
+        /*
           if(strcmp(str_nfc_data, "1e20fd0ccf0804000168a828b0aea51d") == 0){
               LOG_INFO("DATA SEND: Kaese\n");
               put("fe80::1ac0:ffee:1ac0:ffee", "/nfc", "Kaese");
@@ -112,6 +112,9 @@ int main(void)
             LOG_INFO("DATA SEND: %s\n", str_nfc_data);
             put("fe80::1ac0:ffee:1ac0:ffee", "/nfc", str_nfc_data);
           }
+          */
+          LOG_INFO("DATA SEND: %s\n", str_nfc_data);
+          put("fe80::1ac0:ffee:1ac0:ffee", "/nfc", str_nfc_data);
           msg_send(&msg, pid);
       }
     }
