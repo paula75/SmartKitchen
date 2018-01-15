@@ -51,7 +51,7 @@ This project based on the following software architecture
 3. Setup [Sensornode](https://github.com/smartuni/SmartKitchen/sensor_node)
     1. Connect the needed hardware (see Sensornode-ReadME)
     2. Flash Software to Board
-4. Setup database
+4. Setup [database](https://github.com/smartuni/SmartKitchen/database)
     1. See branche [backend](https://github.com/smartuni/SmartKitchen/tree/backend)
     2. copy analysis Skript and execute
 5. Everything should work now
