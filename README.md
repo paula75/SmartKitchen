@@ -1,39 +1,40 @@
-# SmartToolStation
+# SmartKitchen
   
 WS 2017/18 - RIOT im Internet of Things - Bachelor Project of Computer Science and Electrical Engineering 
    
-# What is ToolSpace?
+# What is SmartKitchen?
   
-ToolSpace is a management system for monitoring and administration of a tool workspace.
-The goal is to develop a system, wich can be easy installed and manage diffrent tools in a comfortable and smart way.
-At the entrance of the workspace, the user sign in by NFC. To rent a tool, the user first loggs into the rental terminal, afterwards he scan the required tools.
-Every tool and every user has his unigue NFC tag. 
-To return the tools, the user only has to place the tool back to the tool wall.
+  We monitor the contents of a fridge (Product and weight).
         
-![Toolspaceübersicht](images/ToolSpace_Uebersicht.png)
+For this we used 4 NoSQL Tables:
 
-**Toolwall**
+**Bestand**
   
-  - A: Tool with NFC tag (:hammer:)
-  - B: Tool with NFC tag (chisel)
-  - C: bold scale
-  - D: gauge with NFC tag, reading device
-  - E: gauge with NFC tag, reading device, electronical lock
+  - Lfd: Auto-incremented value
+  - ID: ID of the product in the fridge
+  - Gewicht: Weight
+  - Temp: Did it previously exist?
+  - Kategorie: Category of the food (e.g. meat product, dairy)
+  - Produkt: Name of the product
   
-
+  **Sensor**
+  
+  - ID: Auto-incremented value
+  - Wert: Value
+  - Timestamp: Timestamp of the transaction
+  
+  **NFC**
+  
+  - ID: Auto-incremented value
+  - Data: Identifier for the nfc tag
+  - Timestamp: Timestamp of the transaction
+  
+  **Produktmatch**
+  
+  - ID: ID of the product in the fridge
+  - NFCTag: NFCtag identifier (Data in NFC)
+  - Produkt: Name of the product
+  - Kategorie: Name of the product-category (e.g. Meat product, dairy)
 
     
-# System Overview
    
-![Planungsübersicht](images/Planungs%C3%BCbersicht_ToolSpace.png)
-   
-# ToDo Overview
-- [x] README.md erstellen
-- [ ] Milestones:
-  - [ ] Präsentation des Projekts
-  - [ ] First Mock-Up Demo
-  - [ ] Release Candidate 1
-  - [ ] Final Presentation
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
