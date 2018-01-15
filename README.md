@@ -6,7 +6,7 @@ WS 2017/18 - RIOT im Internet of Things - Bachelor Project of Computer Science a
   
   We monitor the contents of a fridge (Product and weight).
         
-For this we used 4 NoSQL Tables:
+For this we used 4 MySQL Tables:
 
 **Bestand**
   
@@ -36,5 +36,11 @@ For this we used 4 NoSQL Tables:
   - Produkt: Name of the product
   - Kategorie: Name of the product-category (e.g. Meat product, dairy)
 
-    
+  # Backend
+  
+  - Spring Framework and Angular
+  - Data is displayed on website using REST communication.
+  - Actions are handled by the ApplicationFacadeController.java
+  
+  - To start the server go to /git/smartkitchen/db and run './gradlew bootrun'
    
