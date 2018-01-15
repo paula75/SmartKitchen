@@ -43,11 +43,11 @@ This project based on the following software architecture
 </p>
 
 ## How to Start
-Markup: 1. Clone Projekt
+1. Clone Projekt
 2. Setup Gateway
-  1. Download and install latest RaspbianOS
-  2. Setup LoWPAN (see RIOT Tutorial)
-  3. Install Crosscoap
+    1. Download and install latest RaspbianOS
+    2. Setup LoWPAN (see RIOT Tutorial)
+    3. Install Crosscoap
 3. Setup Sensornode
   1. Connect the needed hardware (see Sensornode-ReadME)
   2. Flash Software to Board
