@@ -11,7 +11,7 @@ public class Sensor{
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-    private Integer wert;
+    private String wert;
 
     public Integer getId() {
         return id;
@@ -21,11 +21,11 @@ public class Sensor{
         this.id = id;
     }
 
-    public Integer getWert() {
+    public String getWert() {
         return wert;
     }
 
-    public void setWert(Integer wert) {
+    public void setWert(String wert) {
         this.wert = wert;
     }
 

@@ -22,7 +22,8 @@ class ApplicationFacadeController {
     @Autowired
     private BestandRepository bestandRepository;
 
-
+@Autowired
+private ProduktmatchRepository produktmatchRepository;
 
     @RequestMapping(value = "/nfc", method = RequestMethod.GET)
     public Nfc getAllNfc(){
@@ -53,26 +54,49 @@ class ApplicationFacadeController {
 		        public Sensor updateSensor(@RequestBody String sBody){
 			String[] sBodyList = sBody.split(":");
 			Sensor sensor = new Sensor();
-			sensor.setWert(Integer.valueOf(sBodyList[0]));
+			sensor.setWert(sBodyList[0]);
 			sensorRepository.save(sensor);
 		        return sensor;
 			}
 
 @CrossOrigin
     @RequestMapping(value = "/bestand", method = RequestMethod.GET)
-    public Bestand getAllBestand(){
-	return bestandRepository.findFirst1ByOrderByIdDesc();
-							                                        }
+    public String getAllBestand(){
+	List<Bestand> lb =  bestandRepository.findAll();
+	String val = "";
+	for (Bestand b : lb){
+		val = val + " | " + b.getLfd() + " | " + b.getId() + " | " + b.getGewicht() + " | " + b.getTemp() + " | " + b.getKategorie() + " | " + b.getProdukt() + " |";
+	}
+		return val;							                                        }
 
         @RequestMapping(value = "/bestand", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})	                @ResponseBody
 	           public Bestand updateBestand(@RequestBody String bBody){
                    String[] bBodyList = bBody.split(":");
                    Bestand bestand = new Bestand();
-		   bestand.setName(bBodyList[0]);
-                   bestand.setWert(Integer.valueOf(bBodyList[1]));
+                   bestand.setId(Integer.valueOf(bBodyList[0]));
+		   bestand.setGewicht(Integer.valueOf(bBodyList[1]));
+		   bestand.setTemp(Integer.valueOf(bBodyList[2]));
+	bestand.setKategorie(bBodyList[3]);
+	bestand.setProdukt(bBodyList[4]);
 		   bestandRepository.save(bestand);
     		   return bestand;
 	                        }
-}
+	@CrossOrigin
+	@RequestMapping(value = "/produktmatch", method = RequestMethod.GET)
+        public Produktmatch getAllProduktmatch(){
+	return produktmatchRepository.findFirst1ByOrderByIdDesc();
+				                }
 
+        @RequestMapping(value = "/produktmatch", method = RequestMethod.PUT, consumes = {MediaType.ALL_VALUE})                       @ResponseBody
+	 public Produktmatch updateProduktmatch(@RequestBody String bBody){
+	String[] bBodyList = bBody.split(":");	
+	Produktmatch produktmatch = new Produktmatch();
+	produktmatch.setId(Integer.valueOf(bBodyList[0]));
+        produktmatch.setNfctag(bBodyList[1]);
+	produktmatch.setProdukt(bBodyList[2]);
+        produktmatch.setKategorie(bBodyList[3]);
+        produktmatchRepository.save(produktmatch);
+        return produktmatch;
+}
+}
 

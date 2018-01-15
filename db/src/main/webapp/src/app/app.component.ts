@@ -16,18 +16,22 @@ export class AppComponent {
     private http: Http){
   }
 
-  private printUsers(): void {
-    this.result = 'loading...';
-    this.http.get(`/sensor`).subscribe(response => this.result = response.text());
-  }
-  private printTools(): void {
-    this.result = 'loading...';
-    this.http.get(`/nfc`).subscribe(response => this.result = response.text());
-  }
   private printSensor(): void {
     this.result = 'loading...';
     this.http.get(`/sensor`).subscribe(response => this.result = response.text());
   }
+  private printNfc(): void {
+    this.result = 'loading...';
+    this.http.get(`/nfc`).subscribe(response => this.result = response.text());
+  }
+  private printBestand(): void {
+    this.result = 'loading...';
+    this.http.get(`/bestand`).subscribe(response => this.result = response.text());
+    }
+    private printProduktmatch(): void{
+    this.result = 'loading...';
+    this.http.get(`/produktmatch`).subscribe(response => this.result = response.text());
+    }
 
   private printSKData(): void {
     this.result = 'loading...';
@@ -35,7 +39,8 @@ export class AppComponent {
   }
 
   private showPosition(): void {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    
+  let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     var data = "255.255.255.0#01#1";
     console.log(this.http.put('http://192.168.1.236', data, options));

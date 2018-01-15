@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"UFT-8\">\n\t</head>\n\t<body>\n\t\t<h1>\n\t\t{{title}}\n\t\t</h1>\n\t\t<button (click)=\"printUsers()\">Sensor</button>\n\t\t<button (click)=\"printTools()\">NFC</button>\n\t\t<button (click)=\"printSensor()\">Sensordaten</button>\n\t\t<button (click)=\"printSKData()\">Smartkitchen</button>\n\t\t<button (click)=\"showPosition()\">Gateway</button>\n\t\t<br/>\n\t\t<br/>\n\t\t<br/>\n\t\t<div><pre>{{result}}</pre></div>\n\t</body>\n</html>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"UFT-8\">\n\t</head>\n\t<body>\n\t\t<h1>\n\t\t{{title}}\n\t\t</h1>\n\t\t<button (click)=\"printSensor()\">Sensor</button>\n\t\t<button (click)=\"printNfc()\">NFC</button>\n\t\t<button (click)=\"printBestand()\">Bestand</button>\n\t\t<button (click)=\"printProduktmatch()\">Produktmatch</button>\n\t\t<br/>\n\t\t<br/>\n\t\t<br/>\n\t\t<div><pre>{{result}}</pre></div>\n\t</body>\n</html>\n"
 
 /***/ }),
 
@@ -66,20 +66,25 @@ var AppComponent = (function () {
         this.title = 'SmartKitchen';
         this.result = '';
     }
-    AppComponent.prototype.printUsers = function () {
-        var _this = this;
-        this.result = 'loading...';
-        this.http.get("/sensor").subscribe(function (response) { return _this.result = response.text(); });
-    };
-    AppComponent.prototype.printTools = function () {
-        var _this = this;
-        this.result = 'loading...';
-        this.http.get("/nfc").subscribe(function (response) { return _this.result = response.text(); });
-    };
     AppComponent.prototype.printSensor = function () {
         var _this = this;
         this.result = 'loading...';
         this.http.get("/sensor").subscribe(function (response) { return _this.result = response.text(); });
+    };
+    AppComponent.prototype.printNfc = function () {
+        var _this = this;
+        this.result = 'loading...';
+        this.http.get("/nfc").subscribe(function (response) { return _this.result = response.text(); });
+    };
+    AppComponent.prototype.printBestand = function () {
+        var _this = this;
+        this.result = 'loading...';
+        this.http.get("/bestand").subscribe(function (response) { return _this.result = response.text(); });
+    };
+    AppComponent.prototype.printProduktmatch = function () {
+        var _this = this;
+        this.result = 'loading...';
+        this.http.get("/produktmatch").subscribe(function (response) { return _this.result = response.text(); });
     };
     AppComponent.prototype.printSKData = function () {
         var _this = this;
