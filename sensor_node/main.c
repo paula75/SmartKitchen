@@ -101,18 +101,6 @@ int main(void)
       char str_nfc_data[16];
       //NFC-Tag lesen und per http put senden
       if(nfc_read_data(str_nfc_data)) {
-        /*
-          if(strcmp(str_nfc_data, "1e20fd0ccf0804000168a828b0aea51d") == 0){
-              LOG_INFO("DATA SEND: Kaese\n");
-              put("fe80::1ac0:ffee:1ac0:ffee", "/nfc", "Kaese");
-          }else if(strcmp(str_nfc_data, "d554362a9d080400018a84dcced4d71d") == 0) {
-              LOG_INFO("DATA SEND: Wurst\n");
-              put("fe80::1ac0:ffee:1ac0:ffee", "/nfc", "Wurst");
-          }else{
-            LOG_INFO("DATA SEND: %s\n", str_nfc_data);
-            put("fe80::1ac0:ffee:1ac0:ffee", "/nfc", str_nfc_data);
-          }
-          */
           LOG_INFO("DATA SEND: %s\n", str_nfc_data);
           put("fe80::1ac0:ffee:1ac0:ffee", "/nfc", str_nfc_data);
           msg_send(&msg, pid);
