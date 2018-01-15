@@ -49,9 +49,9 @@ This project based on the following software architecture
     2. Setup LoWPAN (see RIOT Tutorial)
     3. Install Crosscoap
 3. Setup Sensornode
-  1. Connect the needed hardware (see Sensornode-ReadME)
-  2. Flash Software to Board
+    1. Connect the needed hardware (see Sensornode-ReadME)
+    2. Flash Software to Board
 4. Setup database
-  1. See branche backend
-  2. copy analysis Skript and execute
+    1. See branche backend
+    2. copy analysis Skript and execute
 5. Everything should work now
