@@ -44,11 +44,11 @@ This project based on the following software architecture
 
 ## How to Start
 1. Clone Projekt
-2. Setup Gateway
+2. Setup [Gateway](https://github.com/smartuni/SmartKitchen/Gateway)
     1. Download and install latest RaspbianOS
     2. Setup LoWPAN (see RIOT Tutorial)
     3. Install Crosscoap
-3. Setup Sensornode
+3. Setup [Sensornode](https://github.com/smartuni/SmartKitchen/sensor_node)
     1. Connect the needed hardware (see Sensornode-ReadME)
     2. Flash Software to Board
 4. Setup database
