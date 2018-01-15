@@ -14,8 +14,19 @@ To read out and detect the NFC-tags the PN532 Board is used.
 
 To measure the weight we measure the pressure and then calculated to a weight. 
 For the measurment the FSR400 is used. The following image show the conversion formula of the FSR.
+**Please use a 120 Ohm resistor.**
 
 
 <p align="center">
-  <img src="/sensor_node/images/FSR.png" width="350"/>
+  <img src="/sensor_node/images/FSR_1.png" width="350"/>
 </p>
+
+## Connect Hardware
+
+Connect the Hardware as shown.
+
+
+<p align="center">
+  <img src="/sensor_node/images/Anschliessen.png" width="350"/>
+</p>
+
