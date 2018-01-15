@@ -18,7 +18,7 @@ For the measurment the FSR400 is used. The following image show the conversion f
 
 
 <p align="center">
-  <img src="/sensor_node/images/FSR_1.png" width="350"/>
+  <img src="/sensor_node/images/FSR_1.png" width="500"/>
 </p>
 
 ## Connect Hardware
