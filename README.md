@@ -43,7 +43,7 @@ This project based on the following software architecture
 </p>
 
 ## How to Start
-1. Clone Projekt
+Markup: 1. Clone Projekt
 2. Setup Gateway
   1. Download and install latest RaspbianOS
   2. Setup LoWPAN (see RIOT Tutorial)
